@@ -1,108 +1,110 @@
-/* GENERAL */
-body {
-    background-color: #111111;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-/* HEADER / NAVBAR */
-header, .navbar {
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Multimedia & Authoring</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./layouts/style.css">
+</head>
 
-.navbar a {
-    color: #ffffff !important;
-}
+<body>
 
-.navbar a:hover {
-    color: #bfbfbf !important;
-}
+    <div id="header"></div>
 
-/* HERO SECTION */
-.hero-section {
-    background: linear-gradient(135deg, #111111, #2b2b2b);
-    color: #ffffff;
-    text-align: center;
-    padding: 100px 20px;
-}
+    <script>
+        fetch('./layouts/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
 
-.hero-title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ffffff;
-}
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Multimedia & Authoring</h1>
+            <p class="hero-subtitle">Rotoscope and 3D Rendering</p>
+            <p class="hero-description">
+                Exploring the art of rotoscoping and the realism of 3D rendering to create compelling visual narratives.
+                Merging creativity with technology to bring motion and dimension to digital storytelling.
+            </p>
+        </div>
+    </section>
 
-.hero-subtitle {
-    font-size: 1.5rem;
-    color: #bfbfbf;
-}
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="row">
+                <!-- Solar System Project -->
+                <div class="col-lg-6 col-md-6">
+                    <a href="./portfolio/solarsystem.html" class="portfolio-card">
+                    <div class="portfolio-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="3D Solar System">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title" color = >3D Solar System</h3>
+                            <p class="card-category">3D Rendering</p>
+                            <p class="card-description">
+                                3D rendering of planets involves creating realistic visual models of celestial bodies
+                                using computer graphics. It simulates textures, lighting, and atmospheric effects to
+                                depict planets with scientific accuracy or artistic style.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Blender</span>
+                                 <span class="tech-tag">3D Modeling</span>
+                                 <span class="tech-tag">Python Script</span>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
 
-.hero-description {
-    color: #d9d9d9;
-}
+                <!-- Rotoscoping -->
+                <div class="col-lg-6 col-md-6">
+                    <a href="./portfolio/rotoscope.html" class="portfolio-card">
+                    <div class="portfolio-card">
+                        <div class="card-image">
+                            <img src="./images/image.png" alt="Rotoscope Project">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">1-minute Video Rotoscope</h3>
+                            <p class="card-category">Rotoscope</p>
+                            <p class="card-description">
+                                Video rotoscoping is a technique where artists trace over footage frame by frame to
+                                isolate subjects or create visual effects. It's commonly used for background removal,
+                                motion tracking, and stylized animation.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Adobe After Effects</span>
+                                <span class="tech-tag">Adobe Premiere Pro</span>
+                                <span class="tech-tag">Capcut</span>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-/* PORTFOLIO SECTION */
-.portfolio-section {
-    background-color: #1a1a1a;
-    padding: 60px 0;
-}
 
-.section-title {
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 40px;
-}
+ <div id="footer"></div>
 
-/* CARD */
-.portfolio-card {
-    display: block;
-    background-color: #2b2b2b;
-    color: #ffffff;
-    border-radius: 10px;
-    overflow: hidden;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(255,255,255,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    <script>
+        fetch('./layouts/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
 
-.portfolio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(255,255,255,0.15);
-}
+    </section>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
 
-.card-content {
-    padding: 20px;
-}
-
-.card-title {
-    color: #ffffff;
-    font-weight: bold;
-}
-
-.card-category {
-    color: #bfbfbf;
-}
-
-.card-description {
-    color: #d9d9d9;
-}
-
-/* TECH TAGS */
-.tech-tag {
-    display: inline-block;
-    background-color: #444444;
-    color: #ffffff;
-    padding: 5px 10px;
-    margin: 4px;
-    border-radius: 5px;
-    font-size: 0.85rem;
-}
-
-/* FOOTER */
-footer {
-    background-color: #111111;
-    color: #bfbfbf;
-    text-align: center;
-    padding: 20px;
-}
+</html>
